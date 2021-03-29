@@ -29,7 +29,11 @@ class Artist
   
   # --- Instance Methods for finding Elements from other classes related to Artist classes
   def songs
+<<<<<<< HEAD
     Song.all.select { |song| song.artist == self }
+=======
+    Song.all.map { |song| song if song.artist == self }
+>>>>>>> ef815047a0da111c8bcc48a69a02c647867f454d
   end
   
   def genres 

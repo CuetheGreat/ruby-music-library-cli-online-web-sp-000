@@ -17,7 +17,10 @@ class MusicLibraryController
     @input = nil
     while @input != "exit" do
       @input = gets.strip
+<<<<<<< HEAD
       self.send(@input)
+=======
+>>>>>>> ef815047a0da111c8bcc48a69a02c647867f454d
     end
   end
   
@@ -27,7 +30,10 @@ class MusicLibraryController
     collection.each_with_index do |song, index|
       puts "#{index.to_i + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
+<<<<<<< HEAD
     
+=======
+>>>>>>> ef815047a0da111c8bcc48a69a02c647867f454d
   end
   
   def list_artists
@@ -50,6 +56,7 @@ class MusicLibraryController
     result = Artist.find_by_name(input)
     
     if result != nil
+<<<<<<< HEAD
      collection = result.songs.sort {|a,b| a.name <=>  b.name }
      collection.each_with_index do |song,index|
        puts "#{index.to_i + 1}. #{song.name} - #{song.genre.name}"
@@ -73,6 +80,10 @@ class MusicLibraryController
       collection = Song.all.sort { |a,b| a.name <=> b.name }
       selection = collection[input.to_i - 1]
       puts "Playing #{selection.name} by #{selection.artist.name}"
+=======
+     binding.pry
+     result.songs.each {|song| puts song.name }
+>>>>>>> ef815047a0da111c8bcc48a69a02c647867f454d
     end
   end
     
